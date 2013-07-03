@@ -26,7 +26,15 @@ logging.basicConfig(
 					format = configs.loggingFormat
 					)
 
-db = shelve.open(_shelves+'/main.db',writeback=True)
+def openShelve():
+	try:
+		db = shelve.open(_shelves+'/main.db',writeback=True)
+	except bsddb.db.DBNoSuchFileError:		# Someone deleted ./dbs
+		os.makedirs('dbs')
+		openShelve()
+	return db
+
+db = openShelve()
 
 class _Object:
 	"""Interacts with the database, saving and removing instances from it."""
