@@ -3,13 +3,12 @@ For copying see LICENSE.
 ppdRPG makes the process of creating simple role playing games easier by
 providing "libraries" and templates so the developer can focus on the characters
 and on the plot - the fun part - rather than on creating functions and 
-troubleshooting. To start creating NPCs, places, objects... just adjust the
-configurations on configs.py, import ppdRPG and then from ppdRPG import *.
+troubleshooting.
 
-Create said characters, which are instances of the classes provided by ppdRPG,
-save them to the database and start coding your game. You can access all
-instances AND their methods from the database thanks to the wonderful Python
-method "shelve". Said methods are the core of this application. For example,
-instead of having to create functions to move an NPC in a place, the developper
-can simply use npcInstance.reach(position). Check the wiki for more help. Use
-help('lib.LIBRARY.CLASS') or help('lib.LIBRARY.CLASS.METHOD') for help.
+It is a small project I started to learn a bit more Python and for my personal 
+use only. However, some people said they were interested in it, so I decided 
+to make it an open project for whoever wants to contribute or fork it. 
+It's currently on it's early stages of development and does not provide much.
+
+See https://github.com/a442/ppdRPG/wiki for help. Or, after importing ppdRPG,
+use Python "help" built-in on the class or method you need help with.
