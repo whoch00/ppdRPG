@@ -46,7 +46,7 @@ class _Object:
 		"""Verifies if self.instanceName is already on the database."""
 		
 		try:			
-			for i in db[self.type_]:				
+			for i in db[str(self.type_)]:				
 				if i == self.instanceName:					
 					raise Exception("There's already a %s with instanceName %s"\
 						"on the database." % (self.type_, self.instanceName))				
@@ -61,10 +61,10 @@ class _Object:
 		logging.info("Saving %s to the database." % (self.instanceName))
 
 		try:
-			db[self.type_][self.instanceName] = self
+			db[str(self.type_)][self.instanceName] = self
 		except KeyError:
-			db[self.type_] = {}
-			db[self.type_][self.instanceName] = self
+			db[str(self.type_)] = {}
+			db[str(self.type_)][self.instanceName] = self
 
 	def delete(self):
 		"""Deletes the instance from the database.
@@ -74,4 +74,4 @@ class _Object:
 		
 		logging.info("Removing %s from the database." % (self.instanceName))
 		
-		del db[self.type_][self.instanceName]
+		del db[str(self.type_)][self.instanceName]
