@@ -19,6 +19,9 @@ libs = {'nature': ['animals']}
 # Which media should be loaded
 etcs = ['templates']
 
+# Which templates should be loaded (implies templates are loaded from etc)
+templates = []
+
 # === LOGGING ===
 
 # At least what should be logged? debug > info > warning > error > critial.
