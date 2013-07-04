@@ -1,0 +1,5 @@
+save() INFO: Saving room to the database.
+move() DEBUG: Moving bob to None on room.
+save() INFO: Saving bob to the database.
+save() INFO: Saving room to the database.
+save() INFO: Saving bob to the database.
