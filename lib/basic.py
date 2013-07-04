@@ -17,7 +17,7 @@ class Place(_Object):
 		
 		if name == None:
 			name = instanceName
-		self.type_ = 'Place'
+		self.type_ = Place
 		self.instanceName = instanceName
 		self.verifyDoubleEntry()
 		self.name = name
@@ -120,7 +120,7 @@ class Npc(_Object, Mobile):
 		
 		if name == None:
 			name = instanceName
-		self.type_ = 'Npc'
+		self.type_ = Npc
 		self.instanceName = instanceName
 		self.verifyDoubleEntry()
 		self.name = name
@@ -159,7 +159,7 @@ class Thing(_Object, Mobile):
 	
 	def __init__(self,name,place,position=[0,0]):
 		
-		self.type_ = 'Thing'
+		self.type_ = Thing
 		self.instanceName = instanceName
 		self.verifyDoubleEntry()
 		
@@ -172,7 +172,7 @@ class Player(_Object, Mobile):
 	
 	def __init__(self,name,place,position=[0,0]):
 		
-		self.type_ = 'Player'
+		self.type_ = Player
 		self.instanceName = instanceName
 		self.verifyDoubleEntry()
 		
