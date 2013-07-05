@@ -20,7 +20,7 @@ libs = {'nature': ['animals']}
 etcs = ['templates']
 
 # Which templates should be loaded (implies templates are loaded from etc)
-templates = []
+templates = ['basic']
 
 # === LOGGING ===
 
