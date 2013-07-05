@@ -175,3 +175,43 @@ class Mobile(_Object):
 				self.reach(destination,currentPosition, 
 							visitedPositions,unvisitedPositions)
 				return None
+
+class Usable(_Object):
+	"""Objects that can be used by a player, a npc...
+	
+	Places do not inherit this class. It is intended for the Thing class and
+	it's childs only.
+	"""
+	
+	
+	def __init__(self, used=None, bans=None):
+		
+		if used == None:		# Who used it.
+			self.used = []
+		else:
+			self.used = used
+		if bans == None:		# Who is not allowed to use it.
+			self.bans = []
+		else:
+			self.bans = bans
+	
+	def use(self, obj):
+		"""Append obj to usedlist if it's allowed to use self.
+		
+		Use objInstance.use(thingInstance) if you want an object to use a thing.
+		"""
+		
+		if not obj in self.bans:
+			self.used.append(obj)
+			return None
+		else:
+			raise Exception("%s is not allowed to use %s." % (
+											obj.instanceName, self.name))
+		
+	def usedBy(self, obj):
+		"""Was this used by obj?"""
+		
+		if obj in self.used:
+			return True
+		else:
+			return False
